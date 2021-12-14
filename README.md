@@ -2,4 +2,4 @@
 
 HW 7
 
-https://alfrntlower.github.io/goit-markup-hw-06/
+https://alfrntlower.github.io/goit-markup-hw-07/
