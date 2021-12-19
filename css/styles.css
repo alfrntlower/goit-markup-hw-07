@@ -337,18 +337,8 @@ img {
 .our-team-section {
   background-color: var(--secondary-bg-color);
 }
-.our-team-scene {
-  overflow: hidden;
-}
 
-.our-team-photo {
-  transform: rotateX(0);
-  transition: transform var(--time-transition) var(--cubic);
-}
-.our-team .item:hover .our-team-photo {
-  transform: translateY(20%) scale(1.5);
-}
-.our-team-title {
+.our-team__heading {
   margin-top: 0px;
   margin-bottom: 50px;
 
@@ -358,23 +348,38 @@ img {
   text-align: center;
   color: var(--primary-text-color);
 }
-.our-team {
+
+.our-team__list {
   margin-top: 0px;
   justify-content: center;
 
   display: flex;
   align-items: center;
 }
-.our-team .item + .item {
+
+.our-team__list .our-team__item + .our-team__item {
   margin-left: 30px;
 }
-.our-team .item {
+
+.our-team__list .our-team__item {
   background-color: var(--white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-.our-team-fs-name {
+.our-team__scene {
+  overflow: hidden;
+}
+
+.our-team__photo {
+  transform: rotateX(0);
+  transition: transform var(--time-transition) var(--cubic);
+}
+.our-team__list .our-team__item:hover .our-team__photo {
+  transform: translateY(20%) scale(1.5);
+}
+
+.our-team__full-name {
   margin-top: 30px;
   margin-bottom: 10px;
 
@@ -384,7 +389,7 @@ img {
   text-align: center;
   color: var(--primary-text-color);
 }
-.our-team-profession {
+.our-team__profession {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.9;
@@ -399,10 +404,10 @@ img {
   padding-bottom: 30px;
 }
 
-.team-social-links:nth-child(n + 2) {
+.team-social-list__links:nth-child(n + 2) {
   margin-left: 10px;
 }
-.team-social-links {
+.team-social-list__links {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -411,27 +416,27 @@ img {
   border-radius: 50%;
   transition: background-color var(--time-transition) var(--cubic);
 }
-.team-icon-instagram,
-.team-icon-twitter,
-.team-icon-facebook,
-.team-icon-linkedin {
+.team-social-list__icon-instagram,
+.team-social-list__icon-twitter,
+.team-social-list__icon-facebook,
+.team-social-list__icon-linkedin {
   width: 20px;
   height: 20px;
   fill: var(--icon-color);
   transition: fill var(--time-transition) var(--cubic);
 }
-.team-social-links:hover,
-.team-social-links:focus {
+.team-social-list__links:hover,
+.team-social-list__links:focus {
   background-color: var(--accent-color);
 }
-.team-social-links:hover .team-icon-instagram,
-.team-social-links:hover .team-icon-twitter,
-.team-social-links:hover .team-icon-facebook,
-.team-social-links:hover .team-icon-linkedin,
-.team-social-links:focus .team-icon-instagram,
-.team-social-links:focus .team-icon-twitter,
-.team-social-links:focus .team-icon-facebook,
-.team-social-links:focus .team-icon-linkedin {
+.team-social-list__links:hover .team-social-list__icon-instagram,
+.team-social-list__links:hover .team-social-list__icon-twitter,
+.team-social-list__links:hover .team-social-list__icon-facebook,
+.team-social-list__links:hover .team-social-list__icon-linkedin,
+.team-social-list__links:focus .team-social-list__icon-instagram,
+.team-social-list__links:focus .team-social-list__icon-twitter,
+.team-social-list__links:focus .team-social-list__icon-facebook,
+.team-social-list__links:focus .team-social-list__icon-linkedin {
   fill: var(--white-color);
 }
 
@@ -488,16 +493,21 @@ img {
 
 /* Portfolio page*/
 
-.filter-buttons {
+/* Filter on page */
+.filter-on-page__heading {
+  display: none;
+}
+
+.filter-buttons-list {
   display: flex;
   margin-bottom: 50px;
   justify-content: center;
 }
-.filter-buttons .item + .item {
+.filter-buttons-list .filter-buttons-list__item + .filter-buttons-list__item {
   margin-left: 8px;
 }
 
-.button-portfolio {
+.filter-buttons-list__button-portfolio {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.6;
@@ -509,20 +519,19 @@ img {
     background-color var(--time-transition) var(--cubic),
     box-shadow var(--time-transition) var(--cubic);
 }
-.button-portfolio:hover,
-.button-portfolio:focus {
+.filter-buttons-list__button-portfolio:hover,
+.filter-buttons-list__button-portfolio:focus {
   color: var(--white-color);
   background-color: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
-.filter {
-  display: none;
-}
+
+/* Work examples */
 .card-set-container {
   margin-top: 34px;
 }
-.card-set {
+.card-set-list {
   display: flex;
   /* Делаем Flex-контейнет многострочным */
   flex-wrap: wrap;
@@ -531,7 +540,7 @@ img {
   margin-top: -30px;
   list-style: none;
 }
-.card-set .item {
+.card-set-list .card-set-list__item {
   /* Задаём всем элементам маржины слева и сверху */
   margin-left: 30px;
   margin-top: 30px;
@@ -543,50 +552,50 @@ img {
 
   transition: box-shadow var(--time-transition) var(--cubic);
 }
-.card-set .item:hover,
-.card-set .item:focus {
+.card-set-list .card-set-list__item:hover,
+.card-set-list .card-set-list__item:focus {
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
 
-.card-set-info {
+.card-set-list__info {
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 24px;
 }
-.ex-works-title {
+.work-examples__title {
   margin-bottom: 4px;
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
 }
-.ex-works-text {
+.work-examples__text {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.9;
   color: var(--secondary-text-color);
 }
-.ex-works-link {
+.work-examples__link {
   text-decoration: none;
   color: var(--primary-text-color);
 }
-.ex-works__img {
+.work-examples__img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-.ex-works-thumb {
+.work-examples__thumb {
   position: relative;
   overflow: hidden;
 }
 
-.ex-works-link:hover .ex-works-thumb-label {
+.work-examples__link:hover .work-examples__label {
   transform: translateY(0);
 }
 
-.ex-works-thumb-label {
+.work-examples__label {
   position: absolute;
   top: 0;
   width: 100%;
