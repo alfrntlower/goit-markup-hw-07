@@ -1,5 +1,5 @@
-# goit-markup-hw-06
+# goit-markup-hw-07
 
-HW 6
+HW 7
 
-https://alfrntlower.github.io/goit-markup-hw-06/
+https://alfrntlower.github.io/goit-markup-hw-07/
